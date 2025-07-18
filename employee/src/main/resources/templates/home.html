@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .head{
+            width: 100%;
+            height: 80px;
+            background-color: rgb(26, 185, 185);
+        }
+		body{
+			background: url('http://localhost:8081/images/240_F_1127733139_XYXegjbVNTQO79EtgZOmRab052PlPw6e.jpg');
+			background-repeat: no-repeat;
+			
+			background-size: cover;
+		}
+
+		.onet{
+		    border-spacing: 30px 0px;
+		    color: black;
+		    border: none;
+		    border-radius: 30px;
+		}
+		a{
+		          color: black;
+		          text-decoration: solid;
+		          font-size: 17.1px;
+				  font-family: 'Times New Roman', Times, serif;
+		      }
+			  h3{
+				font-family: 'Times New Roman', Times, serif;
+				font-size: 18px;
+			  }
+    </style>
+</head>
+<body>
+    <div class="head">
+		 <table class="onet">
+		            <tr>
+		   <td> <h3 style="margin-left: 30px; width: 300px;margin-top: 33px; ">
+		Employee Management System</h3></td>
+		<td ><h4  style="width: 100px;margin-top: 36px; margin-left: -20px;"> <a th:href="@{/about}">About Us</a></h4></td>
+		<td><h4 style="width: 100px;margin-top: 36px;  margin-right: 90px; margin-left: -20px;"><a th:href="@{/contact}">Contact Us</a></h4></td>
+		<td><h4 style="width: 130px; margin-top: 36px; margin-left: 380px; "><a th:href="@{/profile}">Register Admin</a></h4></td>
+		<td><h4 style="margin-top: 36px;width: 0px;"><a th:href="@{/employer/signin}">Login</a></h4></td>
+		
+		    
+		    
+		    </tr>
+		    </table>
+    </div>
+	<h1 style="text-align: center; color: aqua; margin-left: 0px; background-color: black;">       Welcome to Employee Mangement System</h1>
+
+
+</body>
+</html>

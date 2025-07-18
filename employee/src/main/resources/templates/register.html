@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+			font-family: 'Times New Roman', Times, serif;
+            
+        }
+		body{
+		         background: url('http://localhost:8081/images/Asset-management-system.jpg');
+		          background-size:2000px 1700px;
+		          background-repeat: no-repeat;
+		        }
+        .head{
+            width: 100%;
+            height: 80px;
+            background-color: rgb(26, 185, 185);
+        }
+        
+       #headers{
+            border-spacing: -5px 0px;
+            color: black;
+            border: none;
+            border-radius: 30px;
+        }
+		#value{
+		           position: relative;
+		           left: -150px;
+		            top: 20px;
+		            font-size: 20px;   
+		                     
+		           
+		       }
+        td{
+            cursor: pointer;
+            text-decoration: solid;
+        }
+        a{
+            color: black;
+            text-decoration: solid;
+            font-size: 16.1px;
+        }
+        .dept{
+            position: relative;
+            left: 440px;
+            top: 50px;
+            
+            width: 390px;
+            padding-left: 20px;
+            height: 350px;
+            
+            padding-top: 10px;
+            /* background-color: white; */
+            border-radius: 10px;
+
+        }
+        #value{
+            position: relative;
+            left: -150px;
+             top: 20px;
+             font-size: 20px;   
+                      
+            
+        }
+        #field{
+            width: 290px;
+            height: 25px;
+             margin-bottom: 3px;
+             margin-left: 1.5px;
+             padding-left: 4px;
+             font-size: 15px;
+             border-radius: 7px;
+             border: none;
+             background-color: rgb(128, 255, 255);
+        }
+        #button{
+            width: 150px;
+            height: 30px;
+            position: relative;
+            top: 20px;
+            left:   65px;
+            background-color: rgb(26, 185, 185);
+            font-size: 15px;
+            border-radius: 5px;
+        }
+        #table{
+            border-spacing: 60px 20px;
+            margin-top: -20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+		<table id="headers">
+		            <tr>
+		   <td> <h3 style="margin-left: 30px; width: 300px;margin-top: 36px; ">
+		Employee Management System</h3></td>
+		<td ><h4  style="width: 100px;margin-top: 36px; margin-left: -20px;"><a th:href="@{/about}">About Us</h4></td>
+		<td><h4 style="width: 100px;margin-top: 36px;  margin-right: 90px; margin-left: -20px;"><a th:href="@{/contact}">Contact Us</a></h4></td>
+		<td><h4 style="width: 130px;margin-top: 36px; "><a th:href="@{/employer/deptadd}">Add Department</a></h4></td>
+		<td><h4 style="width: 130px; margin-top: 36px;"><a th:href="@{/employer/deptview}">View Department</a></h4></td>
+		<td><h4 style="width: 130px;margin-top: 36px;"><a th:href="@{/employer/viewemployee}">View Employees</a></h4></td>
+		<td><h4 style="width: 130px;margin-top: 36px;"><a th:href="@{/employer/viewmanager}">View Manager</a></h4></td>
+		<td><h4 style="width: 130px;margin-top: 36px; margin-left: 0px;"><a th:href="@{/employer/managerregister}">Register Manager</h4></a></td>
+		<td><h4 style="margin-top: 36px; margin-left: 14px; "><a th:href="@{/employer/home}">Logout</a></h4></td>
+		    
+		    
+		    </tr>
+		    </table>
+    </div >
+    <div class="dept">
+<form th:action="@{/employer/register}" th:object="${Manager}" method="post" enctype="multipart/form-data" >
+    <h1 style="margin-left: 70px; text-align: center; margin-top: -40px;">Register Manager</h1>
+    <div id="value">
+        <legend >
+            <fieldset style="padding: 10px; padding-bottom: 80px; backdrop-filter: blur(40px);  ">
+               <table id="table">
+                <tr>
+                   <td> Name: <input type="text" id="field" th:field="*{name}" placeholder="Enter Name">
+                </td>
+                <td>
+                    Department:<input type="text" id="field" th:field="*{dept}" placeholder="Enter Department">
+                </td>
+                </tr>
+                 <tr>
+                   <td> Email: <input type="text" id="field" th:field="*{username}" placeholder="Enter Email">
+                </td>
+                <td>
+                    Password:<input type="text" id="field" th:field="*{password}" placeholder="Enter Password">
+                </td>
+                </tr>
+                
+                <tr>
+                   <td> Gender : <select id="field" th:field="*{gender}"><option value="Select Gender">Select gender</option>
+                <option value="Male">Male</option>
+            <option value="Female">Female</option></select>
+                </td>
+                <td>Experience:
+                <input type="number"placeholder="Enter Experience" id="field" th:field="*{experience}">
+                </td>
+                </tr>
+                <tr>
+                   <td> Address:
+                    <br> <textarea rows="2.5" cols="55" id="field" th:field="*{address}" placeholder="Enter Address" style="padding-top: 5px;"></textarea>
+                </td>
+                <td style="position: relative; top: -5px;">
+                    City:<input type="text" id="field" th:field="*{city}" placeholder="Enter City" >
+                </td>
+                </tr>
+                <tr>
+                   <td> State:
+                    <br> <input type="text" id="field" th:field="*{state}"placeholder="Enter State">
+                </td>
+                <td >
+                    Pincode:<input type="number" id="field"  th:field="*{pincode}"placeholder="Enter Pincode" >
+                </td>
+                </tr>
+                 <tr>
+                   <td> Upload Profile:
+                    <br> <input type="file" id="field" name="file" >
+                </td>
+                <td >
+                    Contact Number:<input type="text" id="field" th:field="*{Contactno}" placeholder="Enter Number">
+                </td>
+                </tr>
+                <input type="submit" id="button" value="Register" style="position: relative; top: 480px; left: 300px;">
+                
+               </table>
+               
+            </fieldset> 
+        </legend>
+       
+        </div>
+</form>
+<p style="color: green;"><span th:text="${message}"></span></p>
+<br><br>
+ <!-- <p style="color: green;position: relative; left: 185px; font-size: 15px;top: -14px;" > Added Sucessfully</p> -->
+</div>
+</body>
+</html>

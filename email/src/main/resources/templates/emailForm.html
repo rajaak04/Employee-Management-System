@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+            
+
+        }
+
+        #sidebar {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            height: 700px;
+            background-color: rgb(24, 26, 26);
+            position: fixed;
+            color: white;
+        }
+        .one{
+            width: 25%;
+            margin-left: -40px;
+            margin-right: -40px;
+        }
+
+        .profile {
+            width: 150px;
+            height: 150px;
+            border: 6px solid rgb(87, 82, 82);
+            position: relative;
+            left: 60px;
+            background-image: url('/images/photo.jpg');
+            background-size: cover;
+            border-radius: 50%;
+            top: 20px;
+
+        }
+
+        #rd {
+            position: relative;
+            left: 50px;
+            font-size: 22px;
+            font-family: 'Times New Roman', Times, serif;
+            top: 30px;
+            color: white;
+        }
+
+        #ik {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            top: 40px;
+            left: 20px;
+            cursor: pointer;
+            color: white;
+            border: 7px solid white;
+            border-radius: 50%;
+            border-left: -10px;
+            border-bottom: 30px;
+            padding: 5px;
+           margin-right: 20px;
+        }
+
+        #title {
+            margin-left: 350px;
+            margin-top: 20px;
+            font-size: 30px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+
+        }
+
+        .infor {
+            position: relative;
+            left: 20px;
+            top: 30px;
+            border-spacing: 0 40px;
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+            margin-left: 10px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .about {
+            position: relative;
+            top: 800px;
+            left: 300px;
+            width: 1000px;
+            margin-top: -120px;
+        }
+
+        #image {
+            width: 300px;
+            height: 400px;
+            position: relative;
+            top: -37px;
+            left: 19px;
+
+
+        }
+        #email{
+            width: 550px;
+            height: 500px;
+            border: none;
+            box-shadow: 0px 0px 8px  rgb(68, 66, 68);
+            
+        }
+
+        #info3 {
+            position: relative;
+            top: -640px;
+            left: 650px;
+            border-spacing: 0px 50px;
+
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+
+        #info2 {
+            position: relative;
+            top: -370px;
+            left: 350px;
+            border-spacing: 0px 50px;
+
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+
+        }
+
+        #skills {
+            position: relative;
+            left: 300px;
+            top: 300px;
+            margin-bottom: 200px;
+            margin-top: 40px;
+        }
+
+        #hj {
+            position: relative;
+
+        }
+        #projectimg{
+            width:400px; height:300px ;
+            border-bottom-right-radius: 50px;
+            position: relative;
+            top: 50px;
+        }
+
+        #info4 {
+            position: relative;
+            left: 30px;
+            top: 40px;
+        }
+        #content{
+            border: none;
+             box-shadow: 0px 0px 8px  rgb(68, 66, 68);
+             width: 420px;
+             padding-top: 20px;
+             padding-left: 5px;
+        }
+        #sideinfo {
+            position: relative;
+            left: 530px;
+            top: -160px;
+        }
+
+        #power {
+            text-decoration: none;
+            color: white;
+            letter-spacing: 1px;
+            text-align: left;
+        }
+
+        .resume {
+            position: relative;
+            left: 500px;
+            top: 200px;
+
+        }
+    </style>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="sidebar">
+        <div class="profile">
+
+        </div>
+        <p id="rd">Sikkandhar Rajaak S</p>
+
+        <table style="width: 70%;">
+            <tr>
+                <td><i class="fa-brands fa-x-twitter" id="ik"></i>
+
+                </td>
+                <td><i class="fa-brands fa-facebook" id="ik"></i>
+
+                </td>
+                <td><i class="fa-brands fa-instagram" id="ik"></i>
+
+                </td>
+                <td><i class="fa-brands fa-linkedin" id="ik"></i>
+
+                </td>
+                <td>
+
+                </td>
+            </tr>
+        </table>
+        <table class="infor">
+
+            <tr>
+                <td id="power"> <i class="fa-solid fa-house" style="margin-right: 5px; color: white;"></i>
+                    Home
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#about1" id="power"> <i class="fa-solid fa-user"
+                            style="margin-right: 5px;color: white"></i>
+                        About</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <a href="#skills" id="power"> <i class="fa-solid fa-user"
+                            style="margin-right: 5px;color: white"></i>
+                        Skills</a>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fa-solid fa-book" style="margin-right: 6px;color: white"></i>
+                    <a href="#Resume" id="power"> Resume</a>
+                </td>
+            </tr>
+            <tr>
+                <td id="power"><i class="fa
+                    -solid fa-bars-progress" style="margin-right: 5px;color: white"></i>
+                   <a href="#projects" id="power"> Project</a>
+                </td>
+            </tr>
+            <tr>
+                <td id="power"><i class="fa-solid fa-envelope" style="margin-right: 5px;color: white"></i>
+                    Contact
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="one">
+    <div class="Home">
+        <img src="/images/flat-lay-workstation-with-copy-space-laptop_23-2148430879.jpg"
+            style="margin-top: -60px; position:relative;margin-left: 300px; width: 1100px;height: 700px;">
+        <h1
+            style="margin-left: -100px; margin-top: -600px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;position: relative; left: 440px; width: 500px; font-size: 50px; top: 200px; color:white">
+            Sikkandhar Rajaak</h1>
+
+        <!-- <img src="D:\web developement\1000029214.webp" width="1050px" height="700px" style="margin-left: 300px;"> -->
+    </div>
+
+    <div class="about" id="about1">
+        <h2>
+            <P style="position: relative; top:20px 
+        ; font-size: 40px; left: 20px; " id="hj">About</P>
+        </h2>
+
+        <br>
+        <br>
+        <p style="font-size: 18px; font-family: 'Times New Roman', Times, serif; position: relative;left: 20px ;">
+            I am a passionate and dedicated final-year B.Tech student, currently pursuing a specialization in Java Full
+            Stack Development. With a strong foundation in Java programming, object-oriented concepts, and web
+            development technologies like HTML, CSS, JavaScript, and React, I aim to build efficient and user-friendly
+            applications.
+        </p>
+        <br>
+        <br>
+        <h3 id="title">Java Developer</h3>
+        <img src="/images/photo.jpg" id="image">
+        <table id="info2" style="height: 60px;">
+            <tr>
+                <td><i class="fa-solid fa-star-of-life" style="margin-right: 5px; "></i><b>DOB:</b></td>
+                <td>15-09-2004</td>
+            </tr>
+            <tr>
+                <td><i class="fa-solid fa-star-of-life" style="margin-right: 5px;"></i><b>Phone:</b></td>
+                <td>7010358099</td>
+            </tr>
+            <tr>
+                <td><i class="fa-solid fa-star-of-life" style="margin-right: 5px;"></i><b>City:</b></td>
+                <td>Madurai</td>
+            </tr>
+
+
+        </table>
+        <table id="info3">
+            <tr>
+                <td><i class="fa-solid fa-star-of-life" style="margin-right: 5px;"></i><b>Age:</b></td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td><i class="fa-solid fa-star-of-life" style="margin-right: 5px;"></i><b>Degree:</b></td>
+                <td>B.Tech</td>
+            </tr>
+            <tr>
+
+                <td><i class="fa-solid fa-star-of-life" style="margin-right: 5px;"></i><b>E-mail:</b></td>
+                <td>sikkandharrajaak.s@gmail.com</td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+
+        </table>
+    </div>
+    <div id="skills">
+        <h2>
+            <P style="position: relative; top:20px 
+        ; font-size: 40px; left: 20px; " id="hj">Skills</P>
+        </h2>
+        <table id="info4">
+            <br>
+            <br>
+            <br>
+
+            <tr>
+                <td>HTML</td>
+            </tr>
+            <tr>
+
+                <td>
+                    <progress value="70" max="100" style="width: 400px; height: 40px;">
+                    </progress>
+                </td>
+                <td>70%</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+            </tr>
+            <tr>
+
+                <td>
+                    <progress value="70" max="100" style="width: 400px; height: 40px;">
+
+                    </progress>
+                </td>
+                <td>70%</td>
+            </tr>
+            <tr>
+                <td>Java</td>
+            </tr>
+            <tr>
+
+                <td>
+                    <progress value="85" max="100" style="width: 400px; height: 40px;">
+
+                    </progress>
+                </td>
+                <td>85%</td>
+            </tr>
+
+
+
+        </table>
+        <table id="sideinfo">
+            <tr>
+                <td>SpringBoot</td>
+            </tr>
+            <tr>
+
+                <td>
+                    <progress value="70" max="100" style="width: 400px; height: 40px;">
+                    </progress>
+                </td>
+                <td>80%</td>
+            </tr>
+            <tr>
+                <td>MySQL</td>
+            </tr>
+            <tr>
+
+                <td>
+                    <progress value="70" max="100" style="width: 400px; height: 40px;">
+
+                    </progress>
+                </td>
+                <td>70%</td>
+            </tr>
+            <tr>
+                <td>Java</td>
+            </tr>
+            <tr>
+
+                <td>
+                    <progress value="85" max="100" style="width: 400px; height: 40px;">
+
+                    </progress>
+                </td>
+                <td>85%</td>
+            </tr>
+        </table>
+    </div>
+    <div class="resume" id="Resume">
+        <h1 style="margin-left: -170px; font-size: 40px;">Resume</h1>
+    <table style="margin-left: 350px;">
+<tr style="position: relative; left:-500px ;top: 30px;">
+ 
+    <td >
+        <h2>Achievements</h2>
+    </td>
+</tr>
+<tr>
+    <td>
+        <h2>Summary</h2>
+        <br>
+        <p style="width: 450px;text-align: justify;">Motivated and detail-oriented Java Developer seeking a challenging role
+ to leverage my knowledge in Core Java, SQL, and web development to
+ build scalable and efficient software solutions. Experienced in developing
+ full-stack web applications using Java, Servlets, JSP, and MySQL.
+ Passionate about problem-solving, writing clean and optimized code, and
+ continuously learning new technologies</p>
+ <br>
+        <h2>Internship</h2>
+        <h3 style="font-size: 19px;">NOVANECTER SERVICES PVT.LTD</h3>
+       <h4> JAVA INTERN(JUNE 2024 -SEP 2024)</h4>
+       <br>
+       <ul style="margin-left: 30px; text-align: justify; width: 400px;">
+        <li> Developed and maintained Java applications using OOP principles
+ and best coding practices.</li>
+ <li style="margin-top: 5px;"> Gained hands-on experience with JDBC, file handling, and database
+ integration</li>
+       </ul>
+       <br>
+       <br>
+       <h2>Education</h2>
+       <br>
+
+       <h3 style="font-size: 19px; width: 450px; font-family: 'Times New Roman', Times, serif;">SETHU INSTITUTE OF TECHNOLOGY(2021-2025)</h3>
+       <h4 style="font-weight: lighter;"> B.Tech Computer Science and Business System </h4>
+       <P style="margin-left: 25px;">CGPA-7.5</P>
+       <br>
+       <h3 style="font-size: 19px; width: 480px; font-family: 'Times New Roman', Times, serif;">NEHRU VIDHYASALAI  HR.SEC.SCHOOL(2020-2021)</h3>
+       <h4 style="font-weight: lighter;"> HSE-12th Std </h4>
+       <P style="margin-left: 25px;">Percentage-86.4%</P>
+       <br>
+       <h3 style="font-size: 19px; width: 480px; font-family: 'Times New Roman', Times, serif;">NEHRU VIDHYASALAI  HR.SEC.SCHOOL(2018-2019)</h3>
+       <h4 style="font-weight: lighter;"> SSLC-10th Std </h4>
+       <P style="margin-left: 25px;">Percentage-85.4%</P>
+    </td>
+</tr>
+
+    </table>
+    <div id="projects" style="margin-top: 50px; margin-left: -150px;">
+
+        <h1 style="position: relative; top: 100px; font-size: 40px; margin-left: -10px;">Projects</h1>
+        <table style="border-spacing: 30px 120px;">
+            <tr>
+       <td> <img src="/images/job.jpg" id="projectimg"></td>  <td > <img src="/images/Untitled-design-2-1 (1).png" style="margin-left: 100px;"   id="projectimg"></td> 
+            </tr>
+            
+             <tr>
+       <td> <img src="/images/ChatGPT Image May 25, 2025, 09_08_46 PM.png" id="projectimg"></td>  <td > <img src="/images/OIP.png" style="margin-left: 100px;"   id="projectimg"></td> 
+            </tr>
+         </table>
+        <h3 style="margin-left: 450px; width: 250px; position:relative; top:-480px
+        ; font-size: 27px; left: -320px ;">Online Job Portal</h3>
+        <h3 style="margin-left: 430px; width: 450px; position:relative; top:-515px
+        ; font-size: 27px; left: 130px ;">Library Book Management System</h3>
+        <h3 style="margin-left: 350px; width: 550px; position:relative; top:-125px
+        ; font-size: 27px; left: -320px ;">Student Fee Report Management System </h3>
+        <h3 style="margin-left: 510px; width: 450px; position:relative; top:-155px
+        ; font-size: 27px; left: 130px ;">Weather Application</h3>
+        
+        <br>
+        <br>
+        <br>
+    </div>
+    
+<div style="margin-bottom: 1%;">
+    <h1 style="margin-left: -150px;"> 
+        Contact
+    </h1>
+    <div style="margin-left: -150px; margin-top: 100px;" id="content">
+    
+    <i class="fa-solid fa-location-dot"> Address</i>
+    <br>
+     <p>7,Goripalayam,Madurai-2.</p>
+     <br>
+     <i class="fa-solid fa-phone"> Call</i>
+     <br>
+     <p>+91 7010358099</p>
+     <br>
+     <i class="fa-solid fa-envelope" > Mail</i>
+       <br>
+       <p>sikkandharrajaak.s@gmail.com</p>
+	   
+	   <a href="https://maps.app.goo.gl/5gFjcrBv8sWzH9y78">
+	   <img src="map.png" style="width: 400px; height: 300px;"></a>
+<!--   <iframe style="margin-top: 50px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.025580374235!2d78.12453437419566!3d9.931827490170107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c593ddfdcf0f%3A0xca1ecb4385848df1!2sKansapuram%20Main%20Rd%2C%20Madurai%2C%20Tamil%20Nadu%20625002!5e0!3m2!1sen!2sin!4v1748247025641!5m2!1sen!2sin" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+--></div>
+    
+    <div id="email" style="padding-top: 30px;padding-left: 20px; margin-left: 300px; margin-top: -485px;" >
+<form action="/email-form" method="post">
+   <label style="font-size: 20px; ">Your Name
+    <br>
+    <input type="text" name="Name" style="width: 250px; height: 30px; margin-top: 2px;">
+   </label>
+   <label style="font-size: 20px;position: relative; top: -30px;">Your Email
+    <br>
+    <input type="text" name="email" style="width: 250px; height: 30px; margin-left: 260px; ">
+   </label>
+   <label style="font-size: 20px;position: relative; top: 0px;">Subject
+    <br>
+    <input type="text" name="subject" style="width: 510px; height: 30px; margin-left: 0px; ">
+   </label>
+   <label style="font-size: 20px;position: relative; top: 30px;">Message
+    <br>
+   <textarea cols="99" rows="14" name="message" style="margin-top: 5px;"></textarea></label>
+   <br>
+   <input type="submit" value="Send" style="padding: 7px; position: relative;top: 30px; left: 200px;">
+   </form>
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
